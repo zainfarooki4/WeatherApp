@@ -49,8 +49,8 @@ function displayData(obj){
     const displayName = document.getElementById('city-name');
     const displayTemp = document.getElementById('temperature');
     const jsontemp = obj.main.temp;
-    console.log("Temp before conversion:",jsontemp );
-    console.log("Type of temp:", typeof jsontemp);
+    // console.log("Temp before conversion:",jsontemp );
+    // console.log("Type of temp:", typeof jsontemp);
     const temp = obj.main.temp; 
     convertTemp(temp);
     displayTemp.innerHTML = convertTemp(temp);
