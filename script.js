@@ -37,9 +37,9 @@ function toFar(temp){
 
 function convertTemp(temp){
       if (unit.value === 'us'){
-        return toFar(temp);
+        return (toFar(temp));
     } else if(unit.value === 'metric') {
-        toCelsius(temp);
+        return toCelsius(temp);
     }
 }
 
@@ -48,8 +48,12 @@ function displayData(obj){
     display.classList.remove('hidden');
     const displayName = document.getElementById('city-name');
     const displayTemp = document.getElementById('temperature');
-    convertTemp();
-    displayTemp.innerHTML = obj.main.temp;
+    const jsontemp = obj.main.temp;
+    console.log("Temp before conversion:",jsontemp );
+    console.log("Type of temp:", typeof jsontemp);
+    const temp = obj.main.temp; 
+    convertTemp(temp);
+    displayTemp.innerHTML = convertTemp(temp);
     displayName.innerHTML = obj.name;
 }
 
